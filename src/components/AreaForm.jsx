@@ -1,20 +1,23 @@
 import { useState } from 'react'
 import Dropdown from './Dropdown';
+import bd_flag from '../assets/flags/bd.png'
+import usa_flag from '../assets/flags/usa.png'
+import england_flag from '../assets/flags/england.png'
 
 const languages = [
-    { id: 1, name: 'English', value: 'english' },
-    { id: 2, name: 'Bangla', value: 'bangla' },
+    { id: 1, name: 'English', value: 'english', icon: usa_flag },
+    { id: 2, name: 'Bangla', value: 'bangla', icon: bd_flag },
 ]
 
 const currencies = [
-    { id: 1, name: 'USD $', value: 'usd' },
-    { id: 2, name: 'BDT ৳', value: 'bdt' },
+    { id: 1, name: 'USD $', value: 'usd', icon: '' },
+    { id: 2, name: 'BDT ৳', value: 'bdt', icon: '' },
 ]
 
 const countries = [
-    { id: 1, name: 'Bangladesh', value: 'bangladesh' },
-    { id: 2, name: 'England', value: 'england' },
-    { id: 3, name: 'USA', value: 'usa' },
+    { id: 1, name: 'Bangladesh', value: 'bangladesh', icon: bd_flag },
+    { id: 2, name: 'England', value: 'england', icon: england_flag },
+    { id: 3, name: 'USA', value: 'usa', icon: usa_flag },
 ]
 
 const cities = [
