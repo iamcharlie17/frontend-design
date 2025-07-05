@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Dropdown from '../Dropdown';
 import InputField from '../InputField';
+import { Link } from 'react-router-dom';
 
 const genders = [
     { id: 1, name: 'Male' },
@@ -253,23 +254,23 @@ const DesktopCreateAccountForm = () => {
                             the <span className="underline cursor-pointer text-[#D48A35]">privacy policy</span>
                         </p>
                     </small>
-                    <button
-                        type="submit"
-                        className="w-full bg-[#D48A35] hover:bg-amber-600 py-2 text-xl transition duration-100 rounded-md"
-                    >
-                        Create
-                    </button>
+                    <Link to={`/verify/${selectedVerification.name}/${phone || '01827885889'}/${email || 'charlie@gmail.com'}/${Math.floor(1000 + Math.random() * 9000)}`}>
+                        <button
+                            type="submit"
+                            className="w-full disabled:bg-gray-300 bg-[#D48A35] hover:bg-amber-600 py-2 text-xl transition duration-100 rounded-md"
+                        >
+                            Create
+                        </button></Link>
                 </div>
 
-                <div className='text-center mt-8'>
+                <Link to={'/'}><div className='text-center mt-8'>
                     <button
                         type="button"
                         className='underline md:text-xl cursor-pointer'
-                        onClick={() => window.history.back()}
                     >
                         Back
                     </button>
-                </div>
+                </div></Link>
             </form>
 
             {errors.password && (

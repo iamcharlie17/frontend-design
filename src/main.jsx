@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Area from './components/Area.jsx';
 import CreateAccount from './components/CreateAccount.jsx';
+import OtpVerify from './components/OtpVerify.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path:'/create-account',
     element: <CreateAccount/>
+  },
+  {
+    path: '/verify/:type/:phone/:email/:otp',
+    element: <OtpVerify/>
   }
 ]);
 

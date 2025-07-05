@@ -104,7 +104,6 @@ const MobileCreateAccountForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!isFormValid) return;
-
         console.log({
             accountType,
             name,
@@ -256,12 +255,13 @@ const MobileCreateAccountForm = () => {
                             the <span className="underline cursor-pointer text-[#D48A35]">privacy policy</span>
                         </p>
                     </small>
-                    <button
-                        type="submit"
-                        className="w-full bg-[#035fc9] hover:bg-[#035fc9be] text-white py-1 text-sm transition duration-100 rounded-md"
-                    >
-                        Create
-                    </button>
+                    <Link to={`/verify/${selectedVerification.name}/${phone || '01827885889'}/${email || 'charlie@gmail.com'}/${Math.floor(1000 + Math.random() * 9000)}`}>
+                        <button
+                            type="submit"
+                            className="w-full bg-[#035fc9] hover:bg-[#035fc9be] text-white py-1 text-sm transition duration-100 rounded-md"
+                        >
+                            Create
+                        </button></Link>
                 </div>
             </form>
 
