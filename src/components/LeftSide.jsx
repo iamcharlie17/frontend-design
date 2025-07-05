@@ -1,8 +1,7 @@
 
 import circle_bg from '../assets/images/circle-bg.png';
-import home_vector from '../assets/images/home-vector.png'
 
-const LeftSide = () => {
+const LeftSide = ({vector_url}) => {
     return (
         <div className="hidden xl:flex flex-1 bg-white rounded-xl m-8">
             <div
@@ -27,7 +26,7 @@ const LeftSide = () => {
                         </h1>
                     </div>
                     <div className="flex justify-center">
-                        <img src={home_vector} alt="" className="w-1/4" />
+                        <img src={vector_url} alt="" className="w-1/4" />
                     </div>
                 </div>
 

@@ -5,10 +5,10 @@ import clsx from 'clsx';
 const Dropdown = ({ isMobile, label, selected, setSelected, options }) => {
     return (
         <div className={`w-full`}>
-            <label className={`block md:text-xl mb-2`}>{label}</label>
+            <label className={`block md:text-xl `}>{label}</label>
             <Listbox value={selected} onChange={setSelected}>
                 <div className={`relative`}>
-                    <ListboxButton className={`relative flex items-center gap-2 w-full cursor-pointer rounded-md bg-white text-[#00346F] ${isMobile ? "px-2 py-2 border border-gray-100": "px-6 py-4 text-lg"} text-left  shadow-sm ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500`}>
+                    <ListboxButton className={`relative flex items-center gap-2 w-full cursor-pointer rounded-md bg-white text-[#00346F] ${isMobile ? "px-1 py-1 border border-gray-100": "px-4 py-2 text-lg"} text-left  shadow-sm ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500`}>
                         {selected.icon ? <img src={selected.icon} className={`h-6`} /> : ``}
                         <span>{selected.name}</span>
                         <FaSortDown className={`absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[#00346F]`} />
