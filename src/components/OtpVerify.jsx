@@ -7,7 +7,6 @@ const OtpVerify = () => {
     const [otp, setOtp] = useState(['', '', '', '']);
     const [timeLeft, setTimeLeft] = useState(118);
     const timerRef = useRef(null);
-    const [newOtp, setNewOtp] = useState(null)
 
     const { type, phone, email, otp: otpParam } = useParams();
     const serverOtp = otpParam?.split('') || [];
@@ -64,7 +63,6 @@ const OtpVerify = () => {
 
     const handleResend = () => {
         setOtp(['', '', '', '']);
-        setNewOtp(Math.floor(1000, Math.random() * 1000));
         setTimeLeft(118);
         clearInterval(timerRef.current);
         timerRef.current = setInterval(() => {
@@ -85,7 +83,7 @@ const OtpVerify = () => {
         >
             <Link to={'/create-account'} className='top-22 left-8 absolute md:hidden text-[#045EC9] text-xl'><FaChevronLeft /></Link>
             <div className="p-8 space-y-8 w-full max-w-md">
-                <h1 className="text-2xl font-bold text-center mb-16 text-[#045EC9]">Enter verification code ({newOtp ? newOtp : otpParam})</h1>
+                <h1 className="text-2xl font-bold text-center mb-16 text-[#045EC9]">Enter verification code ({otpParam})</h1>
 
                 <div className="text-center space-y-6">
                     <p className='text-[#045EC9]'>We sent the code to</p>
@@ -124,7 +122,7 @@ const OtpVerify = () => {
                     <button
                         onClick={handleVerify}
                         className="px-6 w-full py-2 bg-[#045EC9] text-white font-medium rounded-sm"
-                        disabled={otp.some((digit, i) => digit !== newOtp ? newOtp[i] : serverOtp[i])}
+                        disabled={otp.some((digit, i) => digit !== serverOtp[i])}
                     >
                         Verify
                     </button>
