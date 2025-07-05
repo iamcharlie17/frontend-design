@@ -37,6 +37,16 @@ const AreaForm = () => {
     const [selectedCountry, setSelectedCountry] = useState(countries[0])
     const [selectedCity, setSelectedCity] = useState(cities[0])
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log({
+            language: selectedLanguage,
+            currency: selectedCurrency,
+            country: selectedCountry,
+            city: selectedCity
+        })
+    }
+
     return (
         <div className="flex-1 min-h-screen flex justify-center items-center">
             <div className="text-white space-y-8 w-full px-16">
@@ -48,7 +58,10 @@ const AreaForm = () => {
                     </h1>
                 </div>
 
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form
+                    onSubmit={(e) => handleSubmit(e)}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                >
                     <Dropdown label={'Language'} selected={selectedLanguage} setSelected={setSelectedLanguage} options={languages} />
                     <Dropdown label={'Currency'} selected={selectedCurrency} setSelected={setSelectedCurrency} options={currencies} />
                     <div className="col-span-1 md:col-span-2">
@@ -66,7 +79,7 @@ const AreaForm = () => {
                                 the <span className="underline cursor-pointer text-[#D48A35]">privacy policy</span>
                             </p>
                         </small>
-                        <button className="w-full bg-[#D48A35] hover:bg-amber-600 transition duration-100 py-4 rounded-md text-xl">
+                        <button type='submit' className="w-full bg-[#D48A35] hover:bg-amber-600 transition duration-100 py-4 rounded-md text-xl">
                             Continue
                         </button>
                     </div>
