@@ -3,7 +3,7 @@ import circle_bg from '../assets/images/circle-bg.png';
 
 const LeftSide = ({vector_url}) => {
     return (
-        <div className="hidden xl:flex flex-1 bg-white rounded-xl m-8">
+        <div className="hidden lg:flex flex-1 bg-white rounded-xl m-8">
             <div
                 style={{
                     backgroundImage: `url(${circle_bg})`,

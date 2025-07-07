@@ -19,4 +19,4 @@ const AreaForm = () => {
     return isMobileView ? <MobileAreaForm/> : <DesktopAreaForm/>
 }
 
-export default AreaForm
+export default AreaForm;

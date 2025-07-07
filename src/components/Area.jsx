@@ -5,7 +5,7 @@ import home_vector from '../assets/images/home-vector.png'
 const Area = () => {
     
     return (
-        <div className="min-h-screen bg-[#00346f] flex">
+        <div className={`min-h-screen bg-white md:bg-[#00346f] flex`}>
             <LeftSide vector_url={home_vector}/>
             <AreaForm />
         </div>

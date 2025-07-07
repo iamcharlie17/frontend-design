@@ -16,4 +16,5 @@ const CreateAccountForm = () => {
     return isMobileView ? <MobileCreateAccountForm /> : <DesktopCreateAccountForm />;
 };
 
+
 export default CreateAccountForm;
